@@ -1,0 +1,16 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="bin/www" type="NodeJSConfigurationType" path-to-js-file="bin/www" working-dir="$PROJECT_DIR$">
+    <envs>
+      <env name="DB_HOST" value="localhost" />
+      <env name="DB_NAME" value="postgres" />
+      <env name="DB_PORT" value="5432" />
+      <env name="DB_PW" value="" />
+      <env name="DB_USER" value="daehyun" />
+      <env name="DEBUG" value="camstudy-api-server:*" />
+    </envs>
+    <EXTENSION ID="com.jetbrains.nodejs.run.NodeStartBrowserRunConfigurationExtension">
+      <browser url="http://localhost:3000/" />
+    </EXTENSION>
+    <method v="2" />
+  </configuration>
+</component>
