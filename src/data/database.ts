@@ -4,7 +4,7 @@ interface query{
     text:string,
     values?:any
 }
-
+// Todo: 환경변수로 바꿀 것
 const pool = new pg.Pool({
     host: "localhost",//process.env.DB_HOST,
     user: "daehyun",//process.env.DB_USER,
@@ -13,6 +13,9 @@ const pool = new pg.Pool({
     port: 5432//parseInt(process.env.DB_PORT!,10)
 });
 
+/**
+ * DB pool에 커넥션
+ */
 export async function getConnection(){
     try{
         let connection = await pool.connect();
@@ -24,6 +27,13 @@ export async function getConnection(){
     }
 }
 
+/**
+ * 쿼리 실행
+ * @param params
+ * Param 객체에는 text와 values가 있다.
+ * text는 쿼리문이 들어가고,
+ * values에는 입력 값이 들어간다.
+ */
 export async function execute(params: query){
     console.log(`on DB execute: ${params.text}, ${params.values}`)
     const {text, values} = params;
